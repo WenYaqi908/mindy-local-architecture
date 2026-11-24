@@ -1,0 +1,10 @@
+[req]
+distinguished_name=dn
+prompt=no
+[dn]
+CN=Mindy Local Test CA
+O=Mindy Local
+[v3_ca]
+basicConstraints=critical,CA:TRUE,pathlen:0
+keyUsage=critical,keyCertSign,cRLSign
+subjectKeyIdentifier=hash

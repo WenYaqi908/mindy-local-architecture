@@ -1,0 +1,28 @@
+.DS_Store
+
+# Local toolchains, model weights, and disk images stay on this Mac.
+tools/*
+!tools/local-realtime-voice.py
+!tools/local-realtime-voice-echo-test.py
+!tools/mindy-local-k8s/
+
+tools/mindy-local-k8s/**/*.key
+tools/mindy-local-k8s/**/*.p12
+tools/mindy-local-k8s/**/*.p8
+tools/mindy-local-k8s/backup/out/
+tools/mindy-local-k8s/image/
+tools/mindy-local-k8s/images/
+tools/mindy-local-k8s/mailbox/
+
+phone-app/build/
+
+# Notes and tools that are not the local test stack.
+agent-mailbox/
+deepseek-harness/
+Mac交接/
+Mac交接-20261119.zip
+Clash给朋友.7z
+simulator-h5-host/
+start-dsh.command
+给打包电脑的Cursor.md
+下一轮对话交接.md

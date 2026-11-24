@@ -1,0 +1,200 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: engine-config
+  namespace: mindy
+data:
+  application-local.yml: |
+    server:
+      address: 127.0.0.1
+      port: 18080
+    spring:
+      datasource:
+        url: jdbc:mysql://mysql:3306/ygy_ai?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+        username: mindy
+        password: mindy-local-app
+        driver-class-name: com.mysql.cj.jdbc.Driver
+      jpa:
+        hibernate:
+          ddl-auto: update
+        open-in-view: false
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.MySQLDialect
+      data:
+        redis:
+          host: redis
+          port: 6379
+      ai:
+        dashscope:
+          api-key: local-k8s-unused
+          chat:
+            options:
+              model: qwen3.8-flash
+    app:
+      database:
+        ddl-auto: update
+        show-sql: false
+      ai:
+        backup:
+          model: qwen-plus
+      scheduler:
+        enabled: false
+      jwt:
+        secret: bG9jYWwtazhzLWp3dC1zaWduaW5nLXNlY3JldC0zMmNoYXJz
+      email-auth:
+        local-enabled: true
+        secret: local-k8s-email-proof-secret-32ch
+        mailbox-directory: /mailbox
+        smtp:
+          enabled: false
+      apple-sign-in:
+        login-enabled: false
+        verifier-enabled: false
+      sms-verification:
+        code-secret: local-k8s-sms-code-secret-32chars
+        fixed-code-enabled: false
+        fixed-code-bypass-enabled: false
+    ai:
+      history:
+        cursor-secret: local-k8s-history-cursor-secret-32
+    aliyun:
+      moderation:
+        enabled: false
+      bailian:
+        api:
+          key: local-k8s-unused
+      oss:
+        endpoint: http://seaweedfs:8333
+        access-key: mindy-local
+        secret-key: mindy-local-secret
+        bucket-name: mindy-audio
+        domain: seaweedfs:8333
+    apple:
+      iap:
+        enabled: false
+    realtime:
+      companion-memory:
+        enabled: false
+      dashscope:
+        api-key: local-k8s-unused
+        ws-url: ws://192.168.5.2:18765/api-ws/v1/realtime
+        model: local-k8s-deferred
+    mindy:
+      content:
+        english-enabled: true
+        local-audio:
+          base-url: https://wendydemacbook-air.local:8443
+          bucket: mindy-local-english
+          secret: ${LOCAL_AUDIO_SECRET:}
+    management:
+      health:
+        redis:
+          enabled: true
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: engine-loopback
+  namespace: mindy
+data:
+  loopback.conf: |
+    map $http_upgrade $connection_upgrade {
+      default upgrade;
+      ''      close;
+    }
+    server {
+      listen 8080;
+      location / {
+        proxy_pass http://127.0.0.1:18080;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_read_timeout 300s;
+      }
+    }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: engine
+  namespace: mindy
+spec:
+  selector:
+    app: engine
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: engine
+  namespace: mindy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: engine
+  template:
+    metadata:
+      labels:
+        app: engine
+    spec:
+      containers:
+        - name: engine
+          image: mindy-engine:local
+          imagePullPolicy: Never
+          env:
+            - name: LOCAL_AUDIO_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: local-audio
+                  key: secret
+          volumeMounts:
+            - name: config
+              mountPath: /config
+              readOnly: true
+            - name: mailbox
+              mountPath: /mailbox
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 25
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 30
+          resources:
+            requests:
+              memory: 768Mi
+            limits:
+              memory: 1536Mi
+        - name: loopback
+          image: nginx:1.27-alpine
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: loopback
+              mountPath: /etc/nginx/conf.d
+              readOnly: true
+          resources:
+            requests:
+              memory: 16Mi
+            limits:
+              memory: 64Mi
+      volumes:
+        - name: config
+          configMap:
+            name: engine-config
+        - name: loopback
+          configMap:
+            name: engine-loopback
+        - name: mailbox
+          hostPath:
+            path: /mailbox
+            type: Directory

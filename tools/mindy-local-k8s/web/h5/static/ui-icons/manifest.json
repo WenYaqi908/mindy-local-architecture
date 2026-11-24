@@ -1,0 +1,377 @@
+{
+  "size": 24,
+  "strokeWidth": 1.75,
+  "icons": {
+    "hangup": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "brand-end"
+    },
+    "keyboard": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "brand-key"
+    },
+    "view-text": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "clear-text"
+    },
+    "ask": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "clear-ai"
+    },
+    "feedback": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "clear-feedback"
+    },
+    "mic": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "lr-mic"
+    },
+    "pause": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "lr-pause"
+    },
+    "play": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "lr-play"
+    },
+    "share": {
+      "design": "27-companion-waiting.svg",
+      "symbol": "lr-share"
+    },
+    "text-hide": {
+      "design": "35-companion-voice-text.svg",
+      "symbol": "brand-text-off"
+    },
+    "thumbs-up": {
+      "design": "15-listen-read-brief.svg",
+      "symbol": "thumbs-up"
+    },
+    "heart": {
+      "design": "15-listen-read-brief.svg",
+      "symbol": "heart"
+    },
+    "more": {
+      "design": "15-listen-read-brief.svg",
+      "symbol": "ellipsis"
+    },
+    "sparkles": {
+      "design": "15-listen-read-brief.svg",
+      "symbol": "sparkles"
+    },
+    "comment": {
+      "design": "15-listen-read-brief.svg",
+      "symbol": "message-circle"
+    },
+    "listen": {
+      "design": "48-profile-free.svg",
+      "symbol": "i-volume"
+    },
+    "chat": {
+      "design": "48-profile-free.svg",
+      "symbol": "i-chat"
+    },
+    "gem": {
+      "design": "48-profile-free.svg",
+      "symbol": "i-gem"
+    },
+    "user": {
+      "design": "48-profile-free.svg",
+      "symbol": "i-user"
+    },
+    "send": {
+      "existing": "static/send.svg"
+    },
+    "delete": {
+      "existing": "static/delete.svg"
+    },
+    "empty": {
+      "existing": "static/empty-state.svg"
+    }
+  },
+  "exports": [
+    {
+      "icon": "hangup",
+      "path": "static/companion/exit.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "keyboard",
+      "path": "static/companion/keyboard.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "view-text",
+      "path": "static/companion/view-text.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "text-hide",
+      "path": "static/companion/text-hide.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "ask",
+      "path": "static/companion/ask.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "feedback",
+      "path": "static/companion/feedback.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "mic",
+      "path": "static/companion/mic-input.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "pause",
+      "path": "static/companion/pause.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "play",
+      "path": "static/companion/resume.svg",
+      "color": "#F4F1E8"
+    },
+    {
+      "icon": "play",
+      "path": "static/listen-read/play.svg",
+      "color": "#FFFFFF"
+    },
+    {
+      "icon": "pause",
+      "path": "static/listen-read/pause.svg",
+      "color": "#FFFFFF"
+    },
+    {
+      "icon": "thumbs-up",
+      "path": "static/listen-read/thumbs-up.svg",
+      "color": "#65665F"
+    },
+    {
+      "icon": "heart",
+      "path": "static/listen-read/heart.svg",
+      "color": "#65665F"
+    },
+    {
+      "icon": "more",
+      "path": "static/listen-read/ellipsis.svg",
+      "color": "#65665F"
+    },
+    {
+      "icon": "sparkles",
+      "path": "static/listen-read/sparkles.svg",
+      "color": "#65665F"
+    },
+    {
+      "icon": "comment",
+      "path": "static/listen-read/comment.svg",
+      "color": "#65665F"
+    },
+    {
+      "icon": "feedback",
+      "path": "static/listen-read/feedback.svg",
+      "color": "#65665F"
+    },
+    {
+      "icon": "heart",
+      "path": "static/listen-read/heart-active.svg",
+      "color": "#D94A2B",
+      "fill": true
+    },
+    {
+      "icon": "thumbs-up",
+      "path": "static/listen-read/thumbs-up-active.svg",
+      "color": "#D94A2B",
+      "fill": true
+    },
+    {
+      "icon": "sparkles",
+      "path": "static/listen-read/sparkles-accent.svg",
+      "color": "#D94A2B"
+    },
+    {
+      "icon": "comment",
+      "path": "static/ui-icons/comment.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "thumbs-up",
+      "path": "static/ui-icons/thumbs-up.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "heart",
+      "path": "static/ui-icons/heart.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "share",
+      "path": "static/ui-icons/share.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "ask",
+      "path": "static/ui-icons/ask.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "user",
+      "path": "static/ui-icons/user.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "feedback",
+      "path": "static/ui-icons/feedback.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "delete",
+      "path": "static/ui-icons/delete.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "send",
+      "path": "static/ui-icons/send.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "empty",
+      "path": "static/ui-icons/empty.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "listen",
+      "path": "static/ui-icons/listen.svg",
+      "color": "#65665F",
+      "png": true
+    },
+    {
+      "icon": "thumbs-up",
+      "path": "static/ui-icons/thumbs-up-active.svg",
+      "color": "#D94A2B",
+      "fill": true,
+      "png": true
+    },
+    {
+      "icon": "heart",
+      "path": "static/ui-icons/heart-active.svg",
+      "color": "#D94A2B",
+      "fill": true,
+      "png": true
+    },
+    {
+      "icon": "listen",
+      "path": "static/ui-icons/listen-active.svg",
+      "color": "#D94A2B",
+      "png": true
+    },
+    {
+      "icon": "listen",
+      "path": "static/ui-icons/nav-listen-neutral.svg",
+      "color": "#85867F",
+      "png": true
+    },
+    {
+      "icon": "chat",
+      "path": "static/ui-icons/nav-chat-neutral.svg",
+      "color": "#85867F",
+      "png": true
+    },
+    {
+      "icon": "gem",
+      "path": "static/ui-icons/nav-gem-neutral.svg",
+      "color": "#85867F",
+      "png": true
+    },
+    {
+      "icon": "user",
+      "path": "static/ui-icons/nav-user-neutral.svg",
+      "color": "#85867F",
+      "png": true
+    },
+    {
+      "icon": "listen",
+      "path": "static/ui-icons/nav-listen-warm.svg",
+      "color": "#F4F1E8",
+      "png": true
+    },
+    {
+      "icon": "chat",
+      "path": "static/ui-icons/nav-chat-warm.svg",
+      "color": "#F4F1E8",
+      "png": true
+    },
+    {
+      "icon": "gem",
+      "path": "static/ui-icons/nav-gem-warm.svg",
+      "color": "#F4F1E8",
+      "png": true
+    },
+    {
+      "icon": "user",
+      "path": "static/ui-icons/nav-user-warm.svg",
+      "color": "#F4F1E8",
+      "png": true
+    },
+    {
+      "icon": "listen",
+      "path": "static/ui-icons/nav-listen-gold.svg",
+      "color": "#171816",
+      "png": true
+    },
+    {
+      "icon": "chat",
+      "path": "static/ui-icons/nav-chat-gold.svg",
+      "color": "#171816",
+      "png": true
+    },
+    {
+      "icon": "gem",
+      "path": "static/ui-icons/nav-gem-gold.svg",
+      "color": "#171816",
+      "png": true
+    },
+    {
+      "icon": "user",
+      "path": "static/ui-icons/nav-user-gold.svg",
+      "color": "#171816",
+      "png": true
+    },
+    {
+      "icon": "listen",
+      "path": "static/ui-icons/nav-listen-diamond.svg",
+      "color": "#F4F1E8",
+      "png": true
+    },
+    {
+      "icon": "chat",
+      "path": "static/ui-icons/nav-chat-diamond.svg",
+      "color": "#F4F1E8",
+      "png": true
+    },
+    {
+      "icon": "gem",
+      "path": "static/ui-icons/nav-gem-diamond.svg",
+      "color": "#F4F1E8",
+      "png": true
+    },
+    {
+      "icon": "user",
+      "path": "static/ui-icons/nav-user-diamond.svg",
+      "color": "#F4F1E8",
+      "png": true
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+let e=null;const n=new Set;function t(t){if(!t||"function"!=typeof t.then)return;const o=Promise.resolve(t).then(e=>!0===e,()=>!1);n.add(o),e=Promise.all([...n]).then(e=>e.every(Boolean)),o.then(()=>n.delete(o))}function o(){return e}function l(n){e===n&&(e=null)}export{l as c,o as g,t};

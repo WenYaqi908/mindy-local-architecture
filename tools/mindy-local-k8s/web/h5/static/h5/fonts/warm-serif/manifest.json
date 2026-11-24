@@ -1,0 +1,77 @@
+{
+  "family": "Source Han Serif SC",
+  "version": "2.003",
+  "weight": 400,
+  "role": "Quotation text only in warm fallback mode; UI, headings and prose remain sans-serif",
+  "license": "OFL-1.1",
+  "licenseFile": "OFL.txt",
+  "copyright": "Copyright 2017-2022 Adobe (http://www.adobe.com/), with Reserved Font Name Source.",
+  "source": {
+    "publisher": "Adobe",
+    "repository": "https://github.com/adobe-fonts/source-han-serif",
+    "officialFile": "https://github.com/adobe-fonts/source-han-serif/blob/release/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf",
+    "officialMetadata": "https://api.github.com/repos/adobe-fonts/source-han-serif/contents/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf?ref=release",
+    "downloadMirror": "https://mirrors.nju.edu.cn/adobe-fonts/source-han-serif/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf",
+    "downloadDistribution": "source-han-serif2.003SC",
+    "gitBlobSha1": "cb41635674be23029e98469f729eded6ebc54611",
+    "gitBlobVerifiedAgainstOfficialMetadata": true,
+    "verificationDate": "2026-09-28"
+  },
+  "assets": [
+    {
+      "file": "SourceHanSerifSC-Regular.otf",
+      "format": "otf",
+      "bytes": 24543332,
+      "sha256": "78aa7a328fd974df2d688c8a9fd74a33d8334dfa84ab24d9d11efb2ffc464117",
+      "family": "Source Han Serif SC",
+      "postScriptName": "SourceHanSerifSC-Regular",
+      "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+      "weight": 400,
+      "characters": 44779,
+      "glyphs": 65535,
+      "officialOriginalBinary": true,
+      "derivedFrom": null,
+      "conversion": null
+    },
+    {
+      "file": "SourceHanSerifSC-Regular.woff2",
+      "format": "woff2",
+      "bytes": 16713472,
+      "sha256": "5f7b9280a9b3a224c9db9044bec3243b876fc1b18415cacc2a9f7b7c7f9edcab",
+      "family": "Source Han Serif SC",
+      "postScriptName": "SourceHanSerifSC-Regular",
+      "version": "Version 2.003;hotconv 1.1.1;makeotfexe 2.6.0",
+      "weight": 400,
+      "characters": 44779,
+      "glyphs": 65535,
+      "officialOriginalBinary": false,
+      "derivedFrom": "SourceHanSerifSC-Regular.otf",
+      "conversion": {
+        "tool": "fontTools 4.60.2",
+        "operation": "WOFF2 compression, no character subset",
+        "preserveMetadata": true
+      }
+    }
+  ],
+  "coverageCheck": {
+    "date": "2026-09-28",
+    "tool": "fontTools 4.60.2",
+    "scope": "text and foreignObject source text in 65 App plus 3 Web v2 SVGs; excludes whitespace and Unicode control/format characters",
+    "uniqueCodepoints": 721,
+    "coveredCodepoints": 719,
+    "uncoveredCodepoints": [
+      {
+        "codepoint": "U+2301",
+        "character": "⌁",
+        "handling": "system symbol font fallback"
+      },
+      {
+        "codepoint": "U+25B0",
+        "character": "▰",
+        "handling": "system symbol font fallback"
+      }
+    ],
+    "otfAndWoff2CmapSetsEqual": true,
+    "deviceRenderingVerified": false
+  }
+}

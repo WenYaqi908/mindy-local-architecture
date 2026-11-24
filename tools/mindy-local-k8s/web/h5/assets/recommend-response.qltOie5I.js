@@ -1,0 +1,1 @@
+function r(r){const t=[r,r&&r.data,r&&r.data&&r.data.data];for(const a of t){if(Array.isArray(a))return a;if(a&&"object"==typeof a)for(const r of["content","list","records","items"])if(Array.isArray(a[r]))return a[r]}return[]}export{r as e};
